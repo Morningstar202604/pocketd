@@ -46,6 +46,16 @@ pocketd 是一个独立的、本地优先的**编码 agent**，通过 [**Termux*
 
 ---
 
+## 界面截图
+
+| 桌面 | 手机 |
+|---|---|
+| ![对话中的工具调用卡片与审批请求](docs/images/01-chat-approval.png) | ![手机上的对话面板与审批卡片](docs/images/04-mobile-chat.png) |
+| ![Monaco 编辑器与文件树](docs/images/02-editor.png) | ![手机上的文件抽屉](docs/images/05-mobile-files.png) |
+| ![终端里运行项目测试](docs/images/03-terminal.png) | *终端与 Git 面板在底部导航一键可达* |
+
+---
+
 ## 功能一览
 
 | Module | Features |

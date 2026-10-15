@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Terminal } from '@xterm/xterm';
 import { FitAddon } from '@xterm/addon-fit';
 import { MONO_FONT } from '../lib/presets';
+import { BRAND } from '../lib/brand';
 import { useStore } from '../store';
 import '@xterm/xterm/css/xterm.css';
 
@@ -60,7 +61,7 @@ export function TerminalPanel() {
     termRef.current = term;
     fitRef.current = fit;
     setStatus('connecting');
-    term.write('\x1b[36mZCode\x1b[0m 终端\r\n');
+    term.write(`\x1b[36m${BRAND.name}\x1b[0m 终端\r\n`);
 
     const proto = location.protocol === 'https:' ? 'wss:' : 'ws:';
     const ws = new WebSocket(`${proto}//${location.host}/ws/terminal`);

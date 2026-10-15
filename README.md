@@ -46,6 +46,16 @@ No APK means no foreground service, which means no reliable notification. `node-
 
 ---
 
+## Screenshots
+
+| Desktop | Mobile |
+|---|---|
+| ![Chat with tool-call cards and an approval request](docs/images/01-chat-approval.png) | ![The chat panel on a phone, with an approval card](docs/images/04-mobile-chat.png) |
+| ![Monaco editor with the file tree](docs/images/02-editor.png) | ![The file drawer on a phone](docs/images/05-mobile-files.png) |
+| ![Terminal running the project's test suite](docs/images/03-terminal.png) | *The terminal and Git panels are one tap away in the bottom bar* |
+
+---
+
 ## Features
 
 | Module | Capabilities |

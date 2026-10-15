@@ -46,6 +46,16 @@ APK がなければフォアグラウンドサービスもなく、信頼でき�
 
 ---
 
+## スクリーンショット
+
+| デスクトップ | モバイル |
+|---|---|
+| ![ツール呼び出しカードと承認リクエスト](docs/images/01-chat-approval.png) | ![スマートフォンのチャットパネルと承認カード](docs/images/04-mobile-chat.png) |
+| ![Monaco エディタとファイルツリー](docs/images/02-editor.png) | ![スマートフォンのファイルドロワー](docs/images/05-mobile-files.png) |
+| ![ターミナルでテストスイートを実行](docs/images/03-terminal.png) | ※ターミナルと Git パネルは下部バーからワンタップで開けます |
+
+---
+
 ## 機能一覧
 
 | モジュール | 機能 |

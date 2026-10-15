@@ -48,6 +48,7 @@
     "docs/ARCHITECTURE.md",
     "docs/MOBILE.md",
     "docs/adr/",
+    "docs/images/",
     "server.ts",
     "src/",
     "tests/fixtures/",

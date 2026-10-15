@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { useStore } from '../store';
 import { Wordmark } from './Brand';
-import { writeStored, STORAGE_KEYS } from '../lib/brand';
+import { BRAND, writeStored, STORAGE_KEYS } from '../lib/brand';
 
 const STEPS = [
   {
     title: '一个会动手的编码 agent',
-    content:
-      'ZCode 跑在你手机上的 Termux 里。模型不只回话——它直接读写工作区文件、执行命令、搜索替换、查看 Git，还能连 MCP 服务器。所有数据留在设备上。',
+    content: `${BRAND.nameZh}跑在你手机上的 Termux 里。模型不只回话——它直接读写工作区文件、执行命令、搜索替换、查看 Git，还能连 MCP 服务器。所有数据留在设备上。`,
   },
   {
     title: '危险操作由你批准',
@@ -16,8 +15,7 @@ const STEPS = [
   },
   {
     title: '接上你的模型',
-    content:
-      'ZCode 不绑定提供商：任何兼容 OpenAI 协议的模型都行——DeepSeek、Moonshot、Groq（免费）、Ollama（本地）、OpenAI 等。填好 Key 点「测试连接」即可开始。',
+    content: `${BRAND.nameZh}不绑定提供商：任何兼容 OpenAI 协议的模型都行——DeepSeek、Moonshot、Groq（免费）、Ollama（本地）、OpenAI 等。填好 Key 点「测试连接」即可开始。`,
   },
 ];
 
@@ -56,7 +54,7 @@ export function Onboarding() {
       }}
       role="dialog"
       aria-modal="true"
-      aria-label="欢迎使用 ZCode"
+      aria-label={`欢迎使用 ${BRAND.nameZh}`}
     >
       <div
         style={{
