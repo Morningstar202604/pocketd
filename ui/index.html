@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>pocketd — 本地优先的编码 agent</title>
+    <meta
+      name="description"
+      content="跑在 Android / Termux 本地的编码 agent：模型直接读写你的工作区、执行命令、调用 MCP，危险操作由你批准。无需云账号，数据留在设备上。"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- 图标：iOS 不支持 apple-touch-icon 用 SVG，必须给 PNG -->
+    <link rel="icon" type="image/svg+xml" href="/pocketd-icon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/pocketd-192.png" />
+    <link rel="apple-touch-icon" href="/pocketd-apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- 主题色随深浅色模式切换（store 在运行时同步 meta，这里提供 CSS 媒体查询兜底） -->
+    <meta name="theme-color" content="#17181b" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="dark light" />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="pocketd" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="application-name" content="pocketd" />
+    <meta name="referrer" content="no-referrer" />
+
+    <!-- 社交分享 -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="pocketd — 本地优先的编码 agent" />
+    <meta
+      property="og:description"
+      content="跑在 Android / Termux 本地的编码 agent：真实工具、真实文件、由你批准。"
+    />
+    <meta property="og:image" content="/pocketd-512.png" />
+    <meta property="og:site_name" content="pocketd" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="pocketd — 本地优先的编码 agent" />
+    <meta
+      name="twitter:description"
+      content="跑在 Android / Termux 本地的编码 agent：真实工具、真实文件、由你批准。"
+    />
+    <meta name="twitter:image" content="/pocketd-512.png" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

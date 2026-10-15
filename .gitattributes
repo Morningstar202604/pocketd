@@ -1,0 +1,28 @@
+# 仓库在 Windows 上开发、目标平台是 Android/Linux，行尾统一为 LF，
+# 避免同一文件因 CRLF/LF 混用产生整文件级别的无意义 diff。
+* text=auto eol=lf
+
+# 明确按文本处理的源码 / 配置
+*.ts    text eol=lf
+*.tsx   text eol=lf
+*.js    text eol=lf
+*.mjs   text eol=lf
+*.cjs   text eol=lf
+*.json  text eol=lf
+*.css   text eol=lf
+*.html  text eol=lf
+*.md    text eol=lf
+*.yml   text eol=lf
+*.sh    text eol=lf
+
+# 二进制：永远不要做行尾转换
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.webp  binary
+*.woff  binary
+*.woff2 binary
+*.node  binary
+*.wasm  binary

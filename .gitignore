@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+ui/node_modules/
+
+# Build output
+ui/dist/
+dist/
+*.tsbuildinfo
+
+# Environment & secrets
+.env
+.env.*
+*.local
+.zcode/config.json
+.zcode/env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Termux build artifacts
+*.o
+*.node
+
+# Local tool/editor residue (never source code)
+.meituan-catpaw/
+.qoder/
+.capacitor/
+*.hprof
+.gradle/
+.zwork/
+.v2c/
+
+# Local run state（新旧名字都忽略：改名后旧的残留仍在磁盘上）
+.pocketd-e2e-ws/
+.zcode-e2e-ws/
+.pocketd-trash/
+.zcode-trash/
+.aqg/

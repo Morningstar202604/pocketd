@@ -1,0 +1,49 @@
+{
+  "name": "pocketd — 本地优先的编码 agent",
+  "short_name": "pocketd",
+  "description": "跑在 Termux 本地的编码 agent：真实工具操作你的工作区，危险操作由你批准。无需云账号。",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "any",
+  "background_color": "#17181b",
+  "theme_color": "#17181b",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "categories": [
+    "developer",
+    "productivity",
+    "utilities"
+  ],
+  "icons": [
+    {
+      "src": "/pocketd-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/pocketd-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pocketd-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pocketd-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

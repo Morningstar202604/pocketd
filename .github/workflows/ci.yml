@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  verify:
+    name: Type-Check · Test · Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # .15 is the floor: the frontend test suite uses jsdom 30, which requires it
+          node-version: "24.15"
+          cache: "npm"
+
+      - name: Install server deps
+        run: npm ci
+
+      - name: Type-Check server + frontend
+        run: npm run typecheck
+
+      - name: Unit & integration tests (server)
+        run: npm test
+
+      - name: Component tests (frontend)
+        run: cd ui && npm ci && npm test
+
+      - name: Build frontend
+        run: cd ui && npm run build
+
+      - name: Verify dist exists
+        run: test -f ui/dist/index.html && echo "OK: ui/dist/index.html exists"
+
+      - name: End-to-end (server + stdio MCP + approval round-trip)
+        run: npm run test:e2e
+
+      - name: Security audit (must be clean)
+        run: |
+          npm audit --audit-level=moderate --registry=https://registry.npmjs.org
+          cd ui && npm audit --audit-level=moderate --registry=https://registry.npmjs.org
+
+      - name: Packaging smoke test (tarball must not carry local residue)
+        run: |
+          npm pack --dry-run 2>&1 | tee /tmp/pack.txt
+          if grep -qE '\.pocketd-e2e-ws|\.zwork|\.v2c|docs/audits|tools/oneoff' /tmp/pack.txt; then
+            echo "::error::npm tarball contains local-only files"
+            exit 1
+          fi
+          echo "OK: tarball is clean"

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- maskable：图形收在中心 80% 安全区内，平台裁切成圆形/圆角都不会切到标记 -->
+  <rect width="32" height="32" fill="#4f8cff"/>
+  <path d="M20.24 10.8V21.2" fill="none" stroke="#ffffff" stroke-width="2.08" stroke-linecap="round"/>
+  <circle cx="16.24" cy="17.2" r="4" fill="none" stroke="#ffffff" stroke-width="2.08"/>
+</svg>

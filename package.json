@@ -1,0 +1,93 @@
+{
+  "name": "pocketd",
+  "version": "1.0.0",
+  "type": "module",
+  "private": false,
+  "description": "pocketd — turn your Android phone into a local-first coding agent. Runs in Termux, served as a PWA.",
+  "keywords": [
+    "agent",
+    "ai-chat",
+    "android",
+    "code-editor",
+    "coding-agent",
+    "devtools",
+    "edge-computing",
+    "git",
+    "hono",
+    "local-first",
+    "mcp",
+    "mobile-development",
+    "mobile-ide",
+    "monaco-editor",
+    "open-source",
+    "pocketd",
+    "react",
+    "self-hosted",
+    "terminal",
+    "termux",
+    "typescript",
+    "xterm"
+  ],
+  "author": "pocketd Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/badhope/pocketd.git"
+  },
+  "homepage": "https://github.com/badhope/pocketd#readme",
+  "bugs": {
+    "url": "https://github.com/badhope/pocketd/issues"
+  },
+  "files": [
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "README.ja.md",
+    "README.md",
+    "README.zh-CN.md",
+    "TERMUX-QUICKSTART.md",
+    "docs/ARCHITECTURE.md",
+    "docs/MOBILE.md",
+    "docs/adr/",
+    "server.ts",
+    "src/",
+    "tests/fixtures/",
+    "tools/make-icons.mjs",
+    "tools/png-read.mjs",
+    "tsconfig.json",
+    "ui/dist/"
+  ],
+  "scripts": {
+    "dev": "npx tsx server.ts",
+    "build": "cd ui && npm install && npm run build",
+    "start": "npx tsx server.ts",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "test:ui": "cd ui && npm test",
+    "test:all": "npm test && npm run test:ui",
+    "test:e2e": "node --import tsx tests/e2e-server.mts",
+    "typecheck": "tsc --noEmit -p tsconfig.json && cd ui && tsc --noEmit",
+    "icons": "node tools/make-icons.mjs"
+  },
+  "dependencies": {
+    "@ai-sdk/openai-compatible": "^3.0.68",
+    "@hono/node-server": "^2.1.5",
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "ai": "^7.0.140",
+    "hono": "^4.12.9",
+    "ignore": "^7.0.12",
+    "simple-git": "^4.0.2",
+    "ws": "^8.20.0",
+    "zod": "^4.6.7"
+  },
+  "optionalDependencies": {
+    "node-pty": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/ws": "^8.13.0",
+    "tsx": "^4.23.0",
+    "typescript": "^7.0.2"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

@@ -1,0 +1,48 @@
+# npm 只在没有 .npmignore 时才参考 .gitignore —— 本文件存在即完全取代它，
+# 所以 .gitignore 里的每一条忽略规则都必须在这里复述一遍，否则本机残留
+# （e2e 临时工作区、工具运行记录）会跟着 tarball 一起发布出去。
+# 需要发布的内容用 package.json 的 "files" 白名单收敛，这里只做兜底排除。
+
+# Source & dev files (publish only built server + frontend dist)
+ui/src/
+ui/vite.config.ts
+ui/tsconfig.json
+ui/tsconfig.node.json
+ui/vitest.config.ts
+ui/public/
+ui/index.html
+ui/package.json
+ui/package-lock.json
+termux-setup.sh
+TERMUX-QUICKSTART.md
+.git/
+.gitignore
+.github/
+
+# 工程记录留在仓库里可查，但不进 npm 包
+docs/audits/
+
+# npm working files
+node_modules/
+*.log
+.npm/
+
+# 本机残留（与 .gitignore 保持一致）
+.zwork/
+.v2c/
+.meituan-catpaw/
+.qoder/
+.capacitor/
+.pocketd-e2e-ws/
+.zcode-e2e-ws/
+.pocketd-trash/
+.zcode-trash/
+.aqg/
+*.tsbuildinfo
+.env
+.env.*
+*.local
+coverage/
+.nyc_output/
+*.hprof
+.gradle/
