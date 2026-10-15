@@ -54,3 +54,7 @@ coverage/
 .pocketd-trash/
 .zcode-trash/
 .aqg/
+
+# Release artifacts (published to the platform, not tracked)
+*.tgz
+.release-notes-*.md
