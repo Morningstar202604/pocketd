@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/badhope/pocketd/security/advisories/new
+    about: Report a vulnerability privately. Do not open a public issue — see SECURITY.md for the threat model and what counts.
+  - name: Question or usage help
+    url: https://github.com/badhope/pocketd/discussions
+    about: For "how do I…" questions and setup help, please use Discussions rather than the issue tracker.
+  - name: Read the docs first
+    url: https://github.com/badhope/pocketd/blob/main/docs/ARCHITECTURE.md
+    about: Architecture, design-system rules and the decision records often answer "why is it built this way".

@@ -19,8 +19,10 @@ TERMUX-QUICKSTART.md
 .gitignore
 .github/
 
-# 工程记录留在仓库里可查，但不进 npm 包
+# 工程记录与一次性脚本留在仓库里可查，但不进 npm 包：
+# 前者是内部审查记录，后者匹配的是改动前的代码形态，对使用者没有价值。
 docs/audits/
+tools/oneoff/
 
 # npm working files
 node_modules/
