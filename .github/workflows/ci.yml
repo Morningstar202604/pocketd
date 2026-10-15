@@ -18,9 +18,18 @@ jobs:
           # .15 is the floor: the frontend test suite uses jsdom 30, which requires it
           node-version: "24.15"
           cache: "npm"
+          cache-dependency-path: |
+            package-lock.json
+            ui/package-lock.json
 
+      # 两个包的依赖都必须先装齐：根 typecheck 的最后一步会 cd ui && tsc，
+      # 而它要解析 react / vitest / @testing-library 的类型。之前把安装放在
+      # typecheck 之后，CI 报的是满屏 "Cannot find module 'react'"。
       - name: Install server deps
         run: npm ci
+
+      - name: Install frontend deps
+        run: cd ui && npm ci
 
       - name: Type-Check server + frontend
         run: npm run typecheck
@@ -29,14 +38,14 @@ jobs:
         run: npm test
 
       - name: Component tests (frontend)
-        run: cd ui && npm ci && npm test
+        run: cd ui && npm test
 
       - name: Build frontend
         run: cd ui && npm run build
 
       - name: Verify dist exists
-        # 注意：这里的 run 值必须整体加引号。里面 "OK: ui/dist/..." 含冒号+空格，
-        # YAML 会把它当成映射分隔符而导致整个工作流解析失败（0 秒即失败那类故障）。
+        # 这里的 run 值必须整体加引号：内容含冒号，未加引号会被 YAML 当成
+        # 映射分隔符，导致整个工作流解析失败
         run: 'test -f ui/dist/index.html && echo "dist present"'
 
       - name: End-to-end (server + stdio MCP + approval round-trip)
@@ -54,4 +63,4 @@ jobs:
             echo "::error::npm tarball contains local-only files"
             exit 1
           fi
-          echo "OK: tarball is clean"
+          echo "tarball is clean"
